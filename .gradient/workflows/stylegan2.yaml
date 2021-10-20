@@ -34,9 +34,7 @@ jobs:
         pip install requests==2.22.0
         pip install Pillow==6.2.1
         cd /inputs/stylegan2
-        curl -fsSL https://code-server.dev/install.sh
-        apt-get install screen
-        code-server --bind-addr 127.0.0.1:8888 --auth none & npx localtunnel --port 8888
+        curl -fsSL https://code-server.dev/install.sh | sh
         python run_generator.py generate-images \
           --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
           --seeds=6600-6605 \
